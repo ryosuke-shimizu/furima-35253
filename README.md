@@ -36,7 +36,6 @@ has_many :buyers
 
 belongs_to :user
 has_one :buyer
-has_many :comments
 
 
 ## buyers table
@@ -51,20 +50,19 @@ has_many :comments
 belongs_to :user
 belongs_to :item
 has_one :address
-has_one :comment
 
 
 ## addresses table
 
-| Column         | Type       | Options                        |
-|----------------|------------|--------------------------------|
-| postal_code_id | string     | null: false                    |
-| prefecture_id  | integer    | null: false                    |
-| city           | string     | null: false                    |
-| house_number   | string     | null: false                    |
-| building_name  | string     |                                |
-| phone          | string     | null: false                    |
-| buyer          | references | null: false, foreign_key: true |
+| Column           | Type       | Options                        |
+|------------------|------------|--------------------------------|
+| postal_code_id   | string     | null: false                    |
+| prefecture_id    | integer    | null: false                    |
+| city             | string     | null: false                    |
+| house_number     | string     | null: false                    |
+| building_name    | string     |                                |
+| phone            | string     | null: false                    |
+| buyer_id         | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -76,7 +74,3 @@ belongs_to :buyer
 | Column | Type | Options     |
 |--------|------|-------------|
 | text   | text |             |
-
-### Association
-
-belongs_to :buyer
