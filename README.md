@@ -1,24 +1,65 @@
-# README
+# DB 設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
 
-Things you may want to cover:
+| Column                | Type   | Options     |
+|-----------------------|--------|-------------|
+| nickname              | string | null: false |
+| email                 | string | null: false |
+| password              | string | null: false |
+| password_confirmation | string | null: false |
+| family_name           | string | null: false |
+| first_name            | string | null: false |
+| birthday              | date   | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
 
-* Configuration
+## items table
 
-* Database creation
+| Column        | Type    | Options           |
+|---------------|-------- |-------------------|
+| product_name  | string  | null: false       |
+| user_id       | integer | foreign_key: true |
+| category      | string  | null: false       |
+| status        | string  | null: false       |
+| shipp_cost    | integer | null: false       |
+| delivery_area | string  | null: false       |
+| shipp_date    | date    | null: false       |
+| price         | integer | null: false       |
 
-* Database initialization
+### Association
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## buyers table
 
-* Deployment instructions
+| Column          | Type    | Options     |
+|-----------------|-------- |-------------|
+| card_number     | integer | null: false |
+| expiration_date | integer | null: false |
+| security_code   | integer | null: false |
 
-* ...
+### Association
+
+
+## addresses table
+
+| Column        | Type    | Options     |
+|---------------|---------|-------------|
+| postal_code   | integer | null: false |
+| prefecture    | string  | null: false |
+| city          | string  | null: false |
+| house_number  | integer | null: false |
+| building_name | string  |             |
+| phone         | integer | null: false |
+
+### Association
+
+
+## comments table
+
+| Column | Type | Options     |
+|--------|------|-------------|
+| text   | text |             |
+
+### Association
