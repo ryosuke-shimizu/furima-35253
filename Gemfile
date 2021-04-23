@@ -58,3 +58,5 @@ group :development do
 end
 
 gem 'sprockets'
+
+gem 'devise'
