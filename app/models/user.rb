@@ -14,7 +14,7 @@ class User < ApplicationRecord
       validates :password
       validates :password_confirmation
     end
-    with_options format: { with: /\A[ぁ-んァ-ン一-龥々]+\z/ } do
+    with_options format: { with: /\A[ぁ-んァ-ン一-龥々ー]+\z/ } do
       validates :family_name
       validates :first_name
     end
